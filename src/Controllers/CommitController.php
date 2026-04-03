@@ -36,7 +36,7 @@ class CommitController extends AbstractController
     {
         if(isset($_GET['id'])){
             $id = htmlspecialchars($_GET['id']);
-            $commit = new Commit($id, null, null, null, null, null, null, null, null, null, null);
+            $commit = new Commit($id, null, null, null, null, null, null, null, null, null);
             $myCommit = $commit->getCommitById();
 
             if($myCommit)

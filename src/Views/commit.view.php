@@ -63,7 +63,7 @@ require_once(__DIR__ . "/partials/head.view.php");
                             ?>
                             <a class="btn btn-warning"  href="/modifCommentaire?id=<?= $comment->getIdComment() ?>">Modifier</a>
                             <?php
-                        } 
+                        }
                         if((isset($_SESSION['user']) && $_SESSION['user']['id_user'] === $comment->getIdUser()) || isset($_SESSION['user']) && $_SESSION['user']['id_role'] === 1){
                             ?>
                             <form action="/supprimerCommentaire" method="POST">

@@ -47,12 +47,14 @@ class Commit
         FROM `commit` WHERE `id_commit`= ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$this->id_commit]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC); 
         if($result){
             return new Commit($result['id_commit'], $result["text"],$result["creation_date"],$result["modification_date"],$result["picture"],$result["like_reaction"],$result["supports_reaction"],$result["funny_reaction"],$result["skeptical_reaction"], $result['id_user']);
         }else{
             return false;
         }
+
+
 
     }
 
